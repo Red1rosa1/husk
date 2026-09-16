@@ -1,0 +1,20 @@
+{
+  "name": "husk",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Husk - browser-based multiplayer survival game",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w shared",
+    "dev:server": "npm run build:shared && npm run dev -w server",
+    "dev:client": "npm run build:shared && npm run dev -w client",
+    "build": "npm run build:shared && npm run build -w server && npm run build -w client"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
